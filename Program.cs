@@ -43,9 +43,9 @@
         public void DepositAmount(Customer obj, int amount)
         {
             obj.Balance += amount;
-            Transaction trans=new Transaction(DateTime.Now,obj.CustomerId,"Deposit",amount,obj.Balance);
+            
             Console.WriteLine("Amount deposited");
-            trans.DisplayTransactionDetails();
+            
 
         }
         public void WithdrawAmount(Customer obj, int amount)
@@ -101,26 +101,5 @@
         }
 
     }
-    public class Transaction
-    {
-        public  int TransactionId {  get; set; }
-        public DateTime DateOfTransfer { get; set; }
-        public int CustomerID { get; set; }
-        public string TransactionType { get; set; }
-        public int TransactionAmount { get; set; }
-        public int Balance { get; set; }
-        public Transaction( DateTime dateOfTransfer, int customerID, string transactionType, int transactionAmount, int balance)
-        {
-            this.DateOfTransfer = dateOfTransfer;
-            this.CustomerID = customerID;
-            this.TransactionType = transactionType;
-            this.TransactionAmount = transactionAmount;
-            this.Balance = balance;
-            TransactionId++;
-        }
-        public void DisplayTransactionDetails()
-        {
-            Console.WriteLine($"DateOfTransfer: {this.DateOfTransfer},CustomerID: {this.CustomerID},TransactionType: {this.TransactionType},TransactionAmount:{this.TransactionAmount},Balance: {this.Balance}");
-        }
-    }
+    
 }
