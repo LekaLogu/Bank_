@@ -53,7 +53,6 @@
             if (obj.Balance >= amount)
             {
                 obj.Balance -= amount;
-                Transaction trans=new Transaction(DateTime.Now,obj.CustomerId,"Withdraw",amount,obj.Balance);
                 Console.WriteLine("Amount Withdrawn");
             }
             else
