@@ -89,15 +89,30 @@
     }
     public class Customer
     {
-        public int CustomerId { get; set; }
-        public string Name { get; set; }
-        public int PhoneNumber { get; set; }
-        public int AccountNumber { get; set; }
-        public int Balance { get; set; }
+        private int customerId;
+        private string name;
+        private int phoneNumber;
+        private int accountNumber;
+        private int balance;
         
-        public int CheckBalance()
-        {
-            return Balance;
+        public int CustomerId { get { return customerId; } set { customerId = value; } }
+        public string Name { get { return name; } set { name = value; } }
+        public int PhoneNumber { get { return phoneNumber; } set { this.phoneNumber = value; } }
+        public int AccountNumber { get { return accountNumber; } set { accountNumber = value; } }
+
+
+        public int Balance {
+            get { return this.balance; }
+            set {
+                if (value > 0)
+                {
+                    this.balance = value;
+                }
+                else
+                {
+                    Console.WriteLine("Balance should not negative"); ;
+                }
+            }
         }
 
     }
